@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "node --watch server.js",
     "build": "node server.js"
@@ -20,6 +20,7 @@
     "helmet": "^6.0.1",
     "mongoose": "^6.8.4",
     "morgan": "^1.10.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "stripe": "^11.10.0"
   }
 }

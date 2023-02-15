@@ -4,9 +4,11 @@ import bodyParser from "body-parser";
 import helmet from "helmet";
 import morgan from "morgan";
 import router from "./src/routes/router.js";
+import routerStripe from "./src/routes/stripe.js";
 
 const app = express();
 
+app.use(express.static("public"));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,7 +20,5 @@ app.use("/api", router)
 app.all("*", (req, res) => {
   res.status(404).send(`Url ${req.originalUrl} não existe!`);
 });
-
-
 
 export default app;
