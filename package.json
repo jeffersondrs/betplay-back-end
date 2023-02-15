@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "node --watch server.js",
     "build": "node server.js"
