@@ -4,7 +4,6 @@ import bodyParser from "body-parser";
 import helmet from "helmet";
 import morgan from "morgan";
 import router from "./src/routes/router.js";
-import routerStripe from "./src/routes/stripe.js";
 
 const app = express();
 

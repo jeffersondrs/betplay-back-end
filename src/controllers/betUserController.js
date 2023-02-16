@@ -88,7 +88,7 @@ export const deleteBetUser = async (req, res) => {
 
 export const deleteAllBetUsers = async (req, res) => {
   try {
-    await BetUserModel.deleteMany({});
+    await BetUserModel.deleteMany();
     res.status(204).json({
       status: "success",
       message: "Todos os usuários deletados com sucesso",
