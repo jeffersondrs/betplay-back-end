@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(morgan("combined"));
 
-app.use("/api", router)
+app.use("/api", router);
 
 app.all("*", (req, res) => {
   res.status(404).send(`Url ${req.originalUrl} não existe!`);
