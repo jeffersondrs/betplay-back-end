@@ -16,4 +16,5 @@ router.route("/:id").get(getBetUser).patch(updateBetUser).delete(deleteBetUser);
 
 router.route("/deleteAll").delete(deleteAllBetUsers);
 
+
 export default router;

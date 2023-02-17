@@ -1,4 +1,5 @@
 import BetUserModel from "../models/betUserModel.js";
+import fs from "fs";
 
 export const getAllBetUsers = async (req, res) => {
   try {
@@ -99,4 +100,9 @@ export const deleteAllBetUsers = async (req, res) => {
       message: err,
     });
   }
+};
+
+export const getIndexHtml = async (req, res) => {
+  const data = fs.readFileSync("./src/views/index.html", "utf8");
+  res.status(200).send(data);
 };
