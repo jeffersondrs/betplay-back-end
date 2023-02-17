@@ -4,6 +4,9 @@ import bodyParser from "body-parser";
 import helmet from "helmet";
 import morgan from "morgan";
 import router from "./src/routes/router.js";
+import fs from "fs";
+
+const index = fs.readFileSync("./src/views/index.html", "utf8");
 
 const app = express();
 
@@ -17,7 +20,7 @@ app.use(morgan("combined"));
 
 app.use("/api", router);
 app.get("/", (req, res) => {
-  res.sendFile( __dirname + "/src/views/" + "index.html");
+  res.send(index);
 });
 
 app.all("*", (req, res) => {
