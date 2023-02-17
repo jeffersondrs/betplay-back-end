@@ -101,8 +101,3 @@ export const deleteAllBetUsers = async (req, res) => {
     });
   }
 };
-
-export const getIndexHtml = async (req, res) => {
-  const data = fs.readFileSync("./src/views/index.html", "utf8");
-  res.status(200).send(data);
-};
