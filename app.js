@@ -17,7 +17,7 @@ app.use(morgan("combined"));
 
 app.use("/api", router);
 app.get("/", (req, res) => {
-  res.sendFile("index.html");
+  res.sendFile( __dirname + "/src/views/" + "index.html");
 });
 
 app.all("*", (req, res) => {
