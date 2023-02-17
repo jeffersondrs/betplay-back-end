@@ -2,12 +2,14 @@ import BetUserModel from "../models/betUserModel.js";
 
 export const getAllBetUsers = async (req, res) => {
   try {
-    const betUsers = await BetUserModel.find({});
+    const betApostas = await BetUserModel.find({
+
+    });
     res.status(200).json({
       status: "success",
-      results: betUsers.length,
+      results: betApostas.length,
       data: {
-        betUsers,
+        betApostas,     
       },
     });
   } catch (err) {
@@ -20,7 +22,7 @@ export const getAllBetUsers = async (req, res) => {
 
 export const getBetUser = async (req, res) => {
   try {
-    const betUser = await BetUserModel.findById(req.params.id);
+    const betAposta = await BetUserModel.findById(req.params.id);
     res.status(200).json({
       status: "success",
       data: {
@@ -37,12 +39,12 @@ export const getBetUser = async (req, res) => {
 
 export const createBetUser = async (req, res) => {
   try {
-    const newBetUser = await BetUserModel.create(req.body);
+    const newBetAposta = await BetUserModel.create(req.body);
     res.status(201).json({
       status: "success",
       message: "Usuário criado com sucesso",
       data: {
-        betUser: newBetUser,
+        betAposta: newBetAposta,
       },
     });
   } catch (err) {
@@ -55,12 +57,12 @@ export const createBetUser = async (req, res) => {
 
 export const updateBetUser = async (req, res) => {
   try {
-    const betUser = await BetUserModel.findByIdAndUpdate(req.params);
+    const betAposta = await BetUserModel.findByIdAndUpdate(req.params);
     res.status(200).json({
       status: "success",
       message: "Usuário atualizado com sucesso",
       data: {
-        betUser,
+        betAposta,
       },
     });
   } catch (err) {
@@ -88,7 +90,7 @@ export const deleteBetUser = async (req, res) => {
 
 export const deleteAllBetUsers = async (req, res) => {
   try {
-    await BetUserModel.deleteMany();
+    await BetUserModel.deleteMany({});
     res.status(204).json({
       status: "success",
       message: "Todos os usuários deletados com sucesso",
