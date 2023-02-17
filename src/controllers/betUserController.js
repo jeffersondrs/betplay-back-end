@@ -2,14 +2,12 @@ import BetUserModel from "../models/betUserModel.js";
 
 export const getAllBetUsers = async (req, res) => {
   try {
-    const betApostas = await BetUserModel.find({
-
-    });
+    const betApostas = await BetUserModel.find({});
     res.status(200).json({
       status: "success",
       results: betApostas.length,
       data: {
-        betApostas,     
+        betApostas,
       },
     });
   } catch (err) {

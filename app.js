@@ -16,6 +16,9 @@ app.use(helmet());
 app.use(morgan("combined"));
 
 app.use("/api", router);
+app.get("/", (req, res) => {
+  res.sendFile("index.html");
+});
 
 app.all("*", (req, res) => {
   res.status(404).send(`Url ${req.originalUrl} não existe!`);
