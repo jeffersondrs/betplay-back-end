@@ -1,5 +1,4 @@
 import BetUserModel from "../models/betUserModel.js";
-import fs from "fs";
 
 export const getAllBetUsers = async (req, res) => {
   try {

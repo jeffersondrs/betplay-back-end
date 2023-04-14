@@ -4,6 +4,8 @@ import bodyParser from "body-parser";
 import helmet from "helmet";
 import morgan from "morgan";
 import router from "./src/routes/router.js";
+import cartRouter from "./src/routes/routeCart.js";
+import routeCart from "./src/routes/routeCart.js";
 
 const app = express();
 
@@ -16,6 +18,10 @@ app.use(helmet());
 app.use(morgan("combined"));
 
 app.use("/api", router);
+
+app.use("/cart", cartRouter);
+
+app.use("/payment", routeCart);
 
 app.all("*", (req, res) => {
   res.status(404).send(`Url ${req.originalUrl} não existe!`);
